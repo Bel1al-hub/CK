@@ -1,0 +1,137 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.header{
+    position: relative;
+    background-color: #103b4e;
+}
+.header__logo{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.header__nav{
+    position: absolute;
+    left: 75%;
+    top: 35%;
+    color: rgb(255, 255, 255);
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+a:hover{
+    font-size: 125%;
+    outline: 1px solid #ceac6c;
+    outline-offset: 1px;
+    border-radius: 5%;
+}
+a:active {
+    transform: scale(0.9);
+}
+a:disabled {
+ background-color: #ccc;
+ cursor: not-allowed;
+ transform: none;
+}
+
+.section__first{
+    text-align: center;
+    padding-bottom: 25px;
+    padding-top: 5%;
+}
+
+.section__first__icon{
+    width: 100px;
+    height: 100px;
+}
+
+.section__second{
+    padding-left: 20%;
+    padding-right: 20%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 50px;
+}
+
+.section__third__head{
+    text-align: center;
+    margin: 1%;
+}
+
+.section__third{
+    padding-left: 25%;
+    padding-right: 25%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin: 50px;
+    padding: 1%;
+}
+
+.section__fourth__head{
+    text-align: center;
+    margin: 1%;
+}
+
+.section__fourth{
+    padding-left: 25%;
+    padding-right: 25%;
+    text-align: center;
+    margin: 50px;
+    padding: 1%;
+}
+
+.section__fifth__head{
+    text-align: center;
+    margin: 1%;
+}
+
+.section__fifth{
+    padding-left: 25%;
+    padding-right: 25%;
+    text-align: center;
+    margin: 50px;
+    padding: 1%;
+}
+
+button{
+    background-color: #916636;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+button:active {
+ transform: scale(0.95);
+}
+
+button:disabled {
+ background-color: #ccc;
+ cursor: not-allowed;
+ transform: none;
+}
+
+
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(205, 177, 207);
+    height: 50px;
+}

@@ -5,35 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REVO</title>
     <link rel="icon" type="image/x-icon" href="/assets/pr2/LOGO.ico">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div>
-            <img src="assets/pr2/LOGO.png" alt="">
-            <img src="assets/pr2/icons/shopping-cart-3.png" alt="">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
+    <header class="header">
+        <div class="header__logo">
+            <img src="assets/pr2/LOGO.png" alt width= "150px" height="50px">
+            <img src="assets/pr2/img/Баннер.png" alt="">
+            <img src="assets/pr2/icons/shopping-cart-3.png" alt width= "20px" height="25px">
         </div>
 
-        <h1>Главная</h1>
 
-        <nav>
-            <ul>
-                <li><a href="#COFFEE">КОФЕ</a></li>
-                <li><a href="#COLOR PLATED FILM">ЦВЕТНАЯ ПЛЕНКА С ПОКРЫТИЕМ</a></li>
-                <li><a href="#PHIM PHIM COMBO">КОМБИНАЦИЯ "ФИМ-ФИМ"</a></li>
-                <li><a href="#GIFT SET">ПОДАРОЧНЫЕ НАБОРЫ</a></li>
-                <li><a href="#CONTACTS">КОНТАКТЫ</a></li>
+        <nav class="header__nav">
+        <h1 class="header__header" >Главная</h1>
+            <ul class="nav__list">
+                <li><a class = "header__navigation_COFFEE" href="#COFFEE">КОФЕ</a></li>
+                <li><a class = "header__navigation_COLOR PLATED FILM" href="#COLOR PLATED FILM">ЦВЕТНАЯ ПЛЕНКА С ПОКРЫТИЕМ</a></li>
+                <li><a class = "header__navigation_PHIM PHIM COMBO" href="#PHIM PHIM COMBO">КОМБИНАЦИЯ "ФИМ-ФИМ"</a></li>
+                <li><a class = "header__navigation_GIFT SET" href="#GIFT SET">ПОДАРОЧНЫЕ НАБОРЫ</a></li>
+                <li><a class = "header__navigation_CONTACTS" href="#CONTACTS">КОНТАКТЫ</a></li>
             </ul>
         </nav>
         <div>
-            <img src="assets/pr2/img/Баннер.png" alt="">
+            
         </div>
     </header>
     <main>
-        <section>
+        <section class="section__first">
             <p>ВАШ ПЕРСОНАЛИЗИРОВАННЫЙ КОФЕ</p>
             <h2>КОФЕ СОЗДАЕТ ВАШУ БАЗУ</h2>
+        </section>
+
+        <section class="section__second" id = "COFFEE">
             <article>
-                <img src="assets/pr2/icons/кофейня.png" alt="">
+                <img class="section__second__icon" src="assets/pr2/icons/кофейня.png" alt="">
                 <h3>Происхождения</h3>
                 <p>
                     Кофе в&nbsp;зернах Арабика и<br /> робуста одинакового качества.<br /> международные стандарты.
@@ -65,10 +73,10 @@
             </article>
         </section>
 
-        <section id="COFFEE">
-            <p>Выбери Свой Любимый</p>
-            <h2>ХОРОШИЙ ВКУС</h2>
+    <p class="section__third__head">Выбери Свой Любимый</p>
+    <h2 class="section__third__head">ХОРОШИЙ ВКУС</h2>
 
+        <section class="section__third" id="COLOR PLATED FILM">
             <article>
                 <img src="assets/pr2/img/КофеЖелтый.png" alt="">
                 <p> 99.000 </p>
@@ -115,19 +123,18 @@
 
         </section>
 
-        <section id="GIFT SET">
-            <p><br />Выбери Свой Любимый</p>
-            <h2>ХОРОШИЙ ВКУС</h2>
+        <section class = "section__fourth" id="GIFT SET">
+            <p class="section__fourth__head"><br />Выбери Свой Любимый</p>
+            <h2 class="section__fourth__head">ХОРОШИЙ ВКУС</h2>
 
             <article>
                 <img src="assets/pr2/img/ПодарочныйНабор.png" alt="">
                 <p> 285.000 </p>
                 <h3>Подарочный набор "Вьетнамский кофе фин"</h3>
                 <p>
-                    Отличный подарок для ценителей кофе. Кофейные зерна,<br />
-                    тщательно отобранные компанией Revo, обжаренные в&nbsp;соответствии с&nbsp;технологией и&nbsp;<nobr>ноу-хау</nobr>, приобретенными у&nbsp;известных мастеров, а&nbsp;также с&nbsp;любовью.<br />
-                    любовь, страсть кофемашины&hellip; создают чашку кофе<br />
-                    pure coffee именно для вас.
+                    Отличный подарок для ценителей кофе. Кофейные зерна, тщательно отобранные<br />
+                    компанией Revo, обжаренные в&nbsp;соответствии с&nbsp;технологией и&nbsp;<nobr>ноу-хау</nobr>, приобретенными у&nbsp;известных мастеров,<br />
+                    а&nbsp;также с&nbsp;любовью. любовь, страсть кофемашины&hellip; создают чашку кофе pure coffee именно для вас.
                 </p>
                 <img src="assets/pr2/icons/IC_coffee.png" alt="">
                 <p>Изысканная смесь Робусты</p>
@@ -138,9 +145,9 @@
             </article>
         </section>
 
-        <section id="PHIM PHIM COMBO">
-            <p>Ваш персонализированный кофе</p>
-            <h2>КОМБИНИРОВАННЫЙ ФИНЬ-ПХЕ</h2>
+        <section class="section__fifth" id="PHIM PHIM COMBO">
+            <p class="section__fifth__head">Ваш персонализированный кофе</p>
+            <h2 class="section__fifth__head">КОМБИНИРОВАННЫЙ ФИНЬ-ПХЕ</h2>
 
             <article>
                 <img src="assets/pr2/img/КомбоКоричнивый.png" alt="">
@@ -178,7 +185,7 @@
 
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; Revo Coffee Vi&#7879;t&nbsp;Nam&nbsp;&mdash; 2018</p>
     </footer>
 </body>
