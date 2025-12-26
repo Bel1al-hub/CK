@@ -1,4 +1,3 @@
-/* ===== БАЗОВЫЕ СТИЛИ ===== */
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
@@ -17,7 +16,6 @@ img {
     height: auto;
 }
 
-/* ===== HEADER ===== */
 .header {
     background-color: #103b4e;
     padding: 20px;
@@ -31,7 +29,6 @@ img {
     margin-bottom: 20px;
 }
 
-/* FLEXBOX для навигации */
 .header__nav {
     display: flex;
     flex-direction: column;
@@ -54,7 +51,6 @@ img {
     flex-shrink: 0;
 }
 
-/* ===== ССЫЛКИ ===== */
 a {
     text-decoration: none;
     color: rgb(255, 255, 255);
@@ -73,7 +69,6 @@ a:active {
     transform: scale(0.9);
 }
 
-/* ===== СЕКЦИИ ===== */
 .section__first {
     text-align: center;
     padding: 60px 20px;
@@ -89,7 +84,6 @@ a:active {
     height: 100px;
 }
 
-/* GRID - Равномерная сетка для section__second (4 колонки) */
 .section__second {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -109,14 +103,12 @@ a:active {
     margin-bottom: 15px;
 }
 
-/* Стили для отдельных артиклов section__second */
 .section__second__article__first,
 .section__second__article__second,
 .section__second__article__third {
     text-align: center;
 }
 
-/* Заголовки секций - единый стиль для всех */
 .section__third__head,
 .section__fourth__head,
 .section__fifth__head {
@@ -131,7 +123,6 @@ a:active {
     margin-top: 5px;
 }
 
-/* GRID - Masonry сетка для section__third (4 колонки, разная высота) */
 .section__third {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -154,7 +145,6 @@ a:active {
     margin-bottom: 15px;
 }
 
-/* Masonry эффект - разная высота элементов */
 .section__third__article__first {
     grid-row: span 2;
 }
@@ -171,7 +161,6 @@ a:active {
     grid-row: span 2;
 }
 
-/* section__fourth */
 .section__fourth {
     padding: 50px 20px;
     max-width: 800px;
@@ -187,7 +176,6 @@ a:active {
     margin: 15px 0;
 }
 
-/* GRID - Равномерная сетка для section__fifth (3 колонки в один ряд) */
 .section__fifth {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -209,14 +197,12 @@ a:active {
     margin-bottom: 15px;
 }
 
-/* Стили для отдельных артиклов section__fifth */
 .section__fifth__article__first,
 .section__fifth__article__second,
 .section__fifth__article__third {
     text-align: center;
 }
 
-/* ===== КНОПКИ ===== */
 button {
     background-color: #916636;
     color: white;
@@ -244,7 +230,6 @@ button:disabled {
     transform: none;
 }
 
-/* ===== FOOTER ===== */
 .footer {
     display: flex;
     justify-content: center;
@@ -254,8 +239,6 @@ button:disabled {
     min-height: 50px;
 }
 
-/* ===== МЕДИАЗАПРОСЫ - Desktop First ===== */
-
 /* Планшеты (до 1024px) */
 @media screen and (max-width: 1024px) {
     .section__second,
@@ -264,7 +247,6 @@ button:disabled {
         gap: 25px;
     }
 
-    /* Убираем masonry эффект на планшетах */
     .section__third__article__first,
     .section__third__article__second,
     .section__third__article__third,
