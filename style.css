@@ -1,137 +1,381 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
 *, ::before, ::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-body{
-  font-family: "Montserrat Alternates", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+body {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.6;
 }
 
-.header{
-    position: relative;
-    background-color: #103b4e;
+img {
+    max-width: 100%;
+    height: auto;
 }
-.header__logo{
-    display: flex;
-    justify-content: space-around;
+
+/* ===== HEADER ===== */
+.header {
+    background-color: #103b4e;
     padding: 20px;
 }
 
-.header__nav{
-    position: absolute;
-    left: 75%;
-    top: 35%;
-    color: rgb(255, 255, 255);
+.header__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
 }
 
-a{
+/* FLEXBOX для навигации */
+.header__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header__header {
+    color: rgb(255, 255, 255);
+    font-size: 1.5rem;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav__list li {
+    flex-shrink: 0;
+}
+
+/* ===== ССЫЛКИ ===== */
+a {
     text-decoration: none;
     color: rgb(255, 255, 255);
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    display: inline-block;
 }
-a:hover{
-    font-size: 125%;
+
+a:hover {
     outline: 1px solid #ceac6c;
-    outline-offset: 1px;
-    border-radius: 5%;
+    outline-offset: 3px;
+    border-radius: 5px;
 }
+
 a:active {
     transform: scale(0.9);
 }
-a:disabled {
- background-color: #ccc;
- cursor: not-allowed;
- transform: none;
-}
 
-.section__first{
+/* ===== СЕКЦИИ ===== */
+.section__first {
     text-align: center;
-    padding-bottom: 25px;
-    padding-top: 5%;
+    padding: 60px 20px;
 }
 
-.section__first__icon{
+.section__first h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.section__first__icon {
     width: 100px;
     height: 100px;
 }
 
-.section__second{
-    padding-left: 20%;
-    padding-right: 20%;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    margin: 50px;
+/* GRID - Равномерная сетка для section__second (4 колонки) */
+.section__second {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.section__third__head{
+.section__second article {
     text-align: center;
-    margin: 1%;
 }
 
-.section__third{
-    padding-left: 25%;
-    padding-right: 25%;
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    margin: 50px;
-    padding: 1%;
+.section__second img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
 }
 
-.section__fourth__head{
+/* Стили для отдельных артиклов section__second */
+.section__second__article__first,
+.section__second__article__second,
+.section__second__article__third {
     text-align: center;
-    margin: 1%;
 }
 
-.section__fourth{
-    padding-left: 25%;
-    padding-right: 25%;
+/* Заголовки секций - единый стиль для всех */
+.section__third__head,
+.section__fourth__head,
+.section__fifth__head {
     text-align: center;
-    margin: 50px;
-    padding: 1%;
+    margin: 20px 0 10px;
 }
 
-.section__fifth__head{
-    text-align: center;
-    margin: 1%;
+.section__third__head h2,
+.section__fourth__head h2,
+.section__fifth__head h2 {
+    font-size: 1.8rem;
+    margin-top: 5px;
 }
 
-.section__fifth{
-    padding-left: 25%;
-    padding-right: 25%;
-    text-align: center;
-    margin: 50px;
-    padding: 1%;
+/* GRID - Masonry сетка для section__third (4 колонки, разная высота) */
+.section__third {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-button{
+.section__third article {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section__third img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
+/* Masonry эффект - разная высота элементов */
+.section__third__article__first {
+    grid-row: span 2;
+}
+
+.section__third__article__second {
+    grid-row: span 3;
+}
+
+.section__third__article__third {
+    grid-row: span 2;
+}
+
+.section__third__article__fourth {
+    grid-row: span 2;
+}
+
+/* section__fourth */
+.section__fourth {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section__fourth__article__first {
+    padding: 20px;
+}
+
+.section__fourth img {
+    margin: 15px 0;
+}
+
+/* GRID - Равномерная сетка для section__fifth (3 колонки в один ряд) */
+.section__fifth {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section__fifth article {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.section__fifth img {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 15px;
+}
+
+/* Стили для отдельных артиклов section__fifth */
+.section__fifth__article__first,
+.section__fifth__article__second,
+.section__fifth__article__third {
+    text-align: center;
+}
+
+/* ===== КНОПКИ ===== */
+button {
     background-color: #916636;
     color: white;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    background-color: #a57844;
+    transform: translateY(-2px);
 }
 
 button:active {
- transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 button:disabled {
- background-color: #ccc;
- cursor: not-allowed;
- transform: none;
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
 }
 
-
-.footer{
+/* ===== FOOTER ===== */
+.footer {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgb(205, 177, 207);
-    height: 50px;
+    padding: 20px;
+    min-height: 50px;
+}
+
+/* ===== МЕДИАЗАПРОСЫ - Desktop First ===== */
+
+/* Планшеты (до 1024px) */
+@media screen and (max-width: 1024px) {
+    .section__second,
+    .section__third {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    /* Убираем masonry эффект на планшетах */
+    .section__third__article__first,
+    .section__third__article__second,
+    .section__third__article__third,
+    .section__third__article__fourth {
+        grid-row: span 1;
+    }
+
+    .section__fifth {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nav__list {
+        gap: 20px;
+    }
+}
+
+/* Планшеты малые (до 768px) */
+@media screen and (max-width: 768px) {
+    .header__logo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav__list {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .section__second,
+    .section__third,
+    .section__fifth {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 30px 15px;
+    }
+
+    .section__first {
+        padding: 40px 15px;
+    }
+
+    .section__first h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Мобильные устройства (до 480px) */
+@media screen and (max-width: 480px) {
+    .header__nav {
+        gap: 10px;
+    }
+
+    .header__header {
+        font-size: 1.2rem;
+    }
+
+    .nav__list {
+        gap: 10px;
+    }
+
+    .nav__list li a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .section__second,
+    .section__third,
+    .section__fifth {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+
+    .section__first {
+        padding: 30px 10px;
+    }
+
+    .section__first h2 {
+        font-size: 1.3rem;
+    }
+
+    .section__third__head h2,
+    .section__fourth__head h2,
+    .section__fifth__head h2 {
+        font-size: 1.4rem;
+    }
+
+    button {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+
+    .footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+}
+
+/* Очень маленькие экраны (до 360px) */
+@media screen and (max-width: 360px) {
+    .section__first h2 {
+        font-size: 1.1rem;
+    }
+
+    .nav__list li a {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
 }
