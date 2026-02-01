@@ -1,0 +1,244 @@
+/* Планшеты (до 1024px) */
+
+@media (max-width: 1024px) {
+    .header__container {
+        padding: 0 15px;
+    }
+    
+    .header__container__inner {
+        padding: 15px 0;
+    }
+    
+    .nav__list {
+        gap: 20px;
+    }
+    
+    .features,
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+    
+    .combos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Планшеты малые (до 768px) */
+
+@media (max-width: 768px) {
+    .header {
+        position: sticky;
+    }
+    
+    .header__menu-toggle {
+        display: flex !important;
+    }
+    
+    .header__cart {
+        order: -1;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: white;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        padding: 80px 30px 30px;
+        transition: right 0.4s ease;
+        z-index: 1000;
+        overflow-y: auto;
+    }
+    
+    .nav--active {
+        right: 0;
+    }
+    
+    .nav__list {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .nav__item {
+        width: 100%;
+    }
+    
+    .nav__link {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        font-size: 18px;
+        border-bottom: 1px solid #eee;
+        color: var(--text-color);
+    }
+    
+    .nav__link:hover,
+    .nav__link--active {
+        background: transparent;
+        color: var(--primary-color);
+        padding-left: 10px;
+        outline: none;
+    }
+    
+    .features,
+    .products,
+    .combos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 30px 15px;
+    }
+    
+    .caption {
+        min-height: 400px;
+        padding: 40px 30px;
+    }
+    
+    .caption__title {
+        font-size: 2.5rem;
+    }
+    
+    .caption__title-line--accent {
+        padding: 8px 20px;
+    }
+    
+    .button {
+        min-width: 120px;
+    }
+    
+    .scroll-to-top {
+        width: 52px;
+        height: 52px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 22px;
+    }
+    
+    .gift-card__features {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+/* Мобильные устройства (до 480px) */
+
+@media (max-width: 480px) {
+    .nav {
+        width: 100%;
+    }
+    
+    .logo__image {
+        width: 100px;
+        height: auto;
+    }
+    
+    .page {
+        font-size: 17px;
+    }
+    
+    .features,
+    .products,
+    .combos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 10px;
+    }
+    
+    .caption {
+        min-height: 350px;
+        padding: 30px 20px;
+        background-position: center right;
+    }
+   
+    .caption__title {
+        font-size: 2rem;
+    }
+    
+    .caption__title-line--accent {
+        padding: 6px 15px;
+        font-size: 2rem;
+    }
+    
+    .section-header__title {
+        font-size: 1.4rem;
+    }
+    
+    .button {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    .footer {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+    
+    .cart__icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+/* Очень маленькие экраны (до 360px) */
+
+@media (max-width: 360px) {
+    .caption {
+        min-height: 300px;
+        padding: 25px 15px;
+    }
+    
+    .caption__title {
+        font-size: 1.6rem;
+    }
+    
+    .caption__title-line--accent {
+        font-size: 1.6rem;
+        padding: 5px 12px;
+    }
+    
+    .nav__link {
+        font-size: 0.9rem;
+        padding: 12px 0;
+    }
+    
+    .button {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+        min-width: 100px;
+    }
+    
+    .scroll-to-top {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+}
+
+/*затемнение фона при открытом меню*/
+
+.nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.nav-overlay--active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .nav-overlay {
+        display: none;
+    }
+    
+    .nav-overlay--active {
+        display: block;
+    }
+}
