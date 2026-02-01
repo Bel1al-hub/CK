@@ -1,0 +1,528 @@
+/*станадарт наст*/
+
+:root {
+    --primary-color: #103b4e;
+    --secondary-color: #ceac6c;
+    --text-color: #333;
+    --font-family: 'Montserrat Alternates', sans-serif;
+    --transition: all 0.3s ease;
+    --footer-bg: rgb(205, 177, 207);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*page*/
+
+.page {
+    font-family: var(--font-family);
+    font-size: 16px; /* Минимум для Material Design */
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/*заголвок*/
+
+.header {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header__container__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+.header__logo {
+    flex-shrink: 0;
+}
+
+.header__nav {
+    flex: 1;
+}
+
+.header__cart {
+    flex-shrink: 0;
+}
+
+.header__menu-toggle {
+    display: none; /* эта чтобы на компе не было видно' */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo__image {
+    display: block;
+}
+
+
+.cart {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.cart:hover {
+    transform: scale(1.1);
+}
+
+.cart__icon {
+    display: block;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.nav__item {
+    flex-shrink: 0;
+}
+
+.nav__link {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 17px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.nav__link:hover {
+    outline: 1px solid var(--secondary-color);
+    outline-offset: 3px;
+    border-radius: 5px;
+}
+
+.nav__link--active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.nav__link:active {
+    transform: scale(0.9);
+}
+
+/*гамбургер-меню*/
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    padding: 12px 10px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle__line {
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+/*когда меню активно*/
+.menu-toggle--active .menu-toggle__line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle--active .menu-toggle__line:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle--active .menu-toggle__line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/*текст на картинке*/
+
+.caption {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-image: url('../assets/pr2/img/Баннер.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 60px;
+}
+
+.caption::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(16, 59, 78, 0.3) 0%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: 1;
+}
+
+.caption__content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.caption__title {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.caption__title-line {
+    display: block;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.caption__title-line--accent {
+    color: white;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #d4b877 100%);
+    padding: 10px 30px;
+    display: inline-block;
+    margin: 10px 0;
+    box-shadow: 0 4px 15px rgba(206, 172, 108, 0.4);
+}
+
+/*4 блока пояснялки преимуществ*/
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature {
+    text-align: center;
+}
+
+.feature__icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.feature__title {
+    margin-bottom: 10px;
+}
+
+.feature__text {
+    line-height: 1.6;
+}
+
+/*заголовки для последующих блоков*/
+
+.section-header {
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.section-header__subtitle {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.section-header__title {
+    font-size: 1.8rem;
+    margin-top: 5px;
+}
+
+/*отдельные кофе*/
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.product-card__image {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 15px;
+}
+
+.product-card__price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.product-card__title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product-card__description {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.product-card__button {
+    margin: 5px;
+}
+
+/*подарок*/
+
+.gift-set {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gift-card {
+    padding: 20px;
+}
+
+.gift-card__image {
+    margin: 15px 0;
+    max-width: 400px;
+}
+
+.gift-card__price {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.gift-card__title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.gift-card__description {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.gift-card__features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.gift-card__button {
+    margin: 5px;
+}
+
+.gift-feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.gift-feature__icon {
+    width: 40px;
+    height: 40px;
+}
+
+.gift-feature__text {
+    font-size: 0.9rem;
+}
+
+/*комбинация*/
+
+.combos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.combo-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.combo-card__image {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 15px;
+}
+
+.combo-card__price {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 10px 0;
+}
+
+.combo-card__old-price {
+    color: #999;
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+
+.combo-card__title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.combo-card__description {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.combo-card__button {
+    margin: 5px;
+}
+
+/*кнопка*/
+
+.button {
+    min-width: 44px;
+    min-height: 44px;
+    padding: 12px 24px;
+    background-color: #916636;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button:hover {
+    background-color: #a57844;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    transform: scale(0.98);
+}
+
+.button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.button--secondary {
+    background-color: transparent;
+    color: #916636;
+    border: 2px solid #916636;
+}
+
+.button--secondary:hover {
+    background-color: #916636;
+    color: white;
+}
+
+/*скрол*/
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-to-top--visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background: #1e3a23;
+    transform: scale(1.1);
+}
+
+.scroll-to-top:active {
+    transform: scale(0.95);
+}
+
+/*футер*/
+
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--footer-bg);
+    padding: 20px;
+    min-height: 50px;
+}
+
+.footer__text {
+    text-align: center;
+}

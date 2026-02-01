@@ -3,187 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REVO</title>
-    <link rel="icon" type="image/x-icon" href="/assets/pr2/LOGO.ico">
-    <link rel="stylesheet" href="style.css">
+    <title>REVO - Мобильный интерфейс</title>
+    <link rel="icon" type="image/x-icon" href="assets/pr2/LOGO.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- основные стили -->
+    <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- мобильные стили -->
+    <link rel="stylesheet" href="styles/mobile.css" media="screen and (max-width: 1024px)">
 </head>
-<body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    </style>
+<body class="page">
+    <!-- шапка сайта -->
     <header class="header">
-        <div class="header__logo">
-            <img src="assets/pr2/LOGO.png" alt width= "150px" height="50px">
-            <img src="assets/pr2/img/Баннер.png" alt="">
-            <img src="assets/pr2/icons/shopping-cart-3.png" alt width= "20px" height="25px">
+        <div class="header__container">
+            <div class="header__container__inner">
+                <a href="#" class="logo header__logo">
+                    <img class="logo__image" src="assets/pr2/LOGO.png" alt="REVO Logo" width="150" height="50">
+                </a>
+                
+                <!-- гамбургер-менгю -->
+                <button class="menu-toggle header__menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="menu-toggle__line"></span>
+                    <span class="menu-toggle__line"></span>
+                    <span class="menu-toggle__line"></span>
+                </button>
+                
+                <nav class="nav header__nav" id="mainNav">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="#" class="nav__link nav__link--active">Главная</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#coffee" class="nav__link">Кофе</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#products" class="nav__link">Цветная плёнка с покрытием</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#combos" class="nav__link">Комбинация "Фим-Фим"</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#gift-set" class="nav__link">Подарочные наборы</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="#contacts" class="nav__link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="cart header__cart">
+                    <img class="cart__icon" src="assets/pr2/icons/shopping-cart-3.png" alt="Корзина" width="25" height="25">
+                </div>
+            </div>
         </div>
-
-        <nav class="header__nav">
-        <h1 class="header__header" >Главная</h1>
-            <ul class="nav__list">
-                <li><a class = "header__navigation_COFFEE" href="#COFFEE">КОФЕ</a></li>
-                <li><a class = "header__navigation_COLOR PLATED FILM" href="#COLOR PLATED FILM">ЦВЕТНАЯ ПЛЕНКА С ПОКРЫТИЕМ</a></li>
-                <li><a class = "header__navigation_PHIM PHIM COMBO" href="#PHIM PHIM COMBO">КОМБИНАЦИЯ "ФИМ-ФИМ"</a></li>
-                <li><a class = "header__navigation_GIFT SET" href="#GIFT SET">ПОДАРОЧНЫЕ НАБОРЫ</a></li>
-                <li><a class = "header__navigation_CONTACTS" href="#CONTACTS">КОНТАКТЫ</a></li>
-            </ul>
-        </nav>
-
     </header>
-    <main>
-        <section class="section__first">
-            <p>ВАШ ПЕРСОНАЛИЗИРОВАННЫЙ КОФЕ</p>
-            <h2>КОФЕ СОЗДАЕТ ВАШУ БАЗУ</h2>
+
+    <main class="main">
+        <section class="caption">
+            <div class="caption__content">
+                <h1 class="caption__title">
+                    <span class="caption__title-line">ВАШ</span>
+                    <span class="caption__title-line caption__title-line--accent">ПЕРСОНАЛИЗИРОВАННЫЙ</span>
+                    <span class="caption__title-line">КОФЕ</span>
+                </h1>
+            </div>
         </section>
 
-        <section class="section__second" id = "COFFEE">
-            <article>
-                <img class="section__second__icon" src="assets/pr2/icons/кофейня.png" alt="">
-                <h3>Происхождения</h3>
-                <p>
+        <section class="features" id="coffee">
+            <article class="feature features__item">
+                <img class="feature__icon" src="assets/pr2/icons/кофейня.png" alt="Происхождение">
+                <h3 class="feature__title">Происхождения</h3>
+                <p class="feature__text">
                     Кофе в&nbsp;зернах Арабика и<br /> робуста одинакового качества.<br /> международные стандарты.
                 </p>
             </article>
 
-            <article class="section__second__article__first">
-                <img src="assets/pr2/icons/вывеска.png" alt="">
-                <h3>Качество</h3>
-                <p>
+            <article class="feature features__item">
+                <img class="feature__icon" src="assets/pr2/icons/вывеска.png" alt="Качество">
+                <h3 class="feature__title">Качество</h3>
+                <p class="feature__text">
                     Каждое кофейное зернышко&nbsp;&mdash; это единое целое.<br /> процесс высокой концентрации<br /> кофейных мастеров.
                 </p>
             </article>
 
-            <article class="section__second__article__second">
-                <img src="assets/pr2/icons/банкипакеты.png" alt="">
-                <h3>Орехи</h3>
-                <p>
+            <article class="feature features__item">
+                <img class="feature__icon" src="assets/pr2/icons/банкипакеты.png" alt="Орехи">
+                <h3 class="feature__title">Орехи</h3>
+                <p class="feature__text">
                     Качество кофейной чашки на&nbsp;70%<br /> зависит от&nbsp;происхождения и&nbsp;качества<br /> зеленых зерен.
                 </p>
             </article>
 
-             <article class="section__second__article__third">
-                <img src="assets/pr2/icons/кофемашина.png" alt="">
-                <h3>Подготовка</h3>
-                <p>
+            <article class="feature features__item">
+                <img class="feature__icon" src="assets/pr2/icons/кофемашина.png" alt="Подготовка">
+                <h3 class="feature__title">Подготовка</h3>
+                <p class="feature__text">
                     Кофейные зерна измельчаются<br /> путем тщательной обжарки<br /> и&nbsp;выдерживаются в&nbsp;течение длительного времени.
                 </p>
             </article>
         </section>
 
-    <p class="section__third__head">Выбери Свой Любимый</p>
-    <h2 class="section__third__head">ХОРОШИЙ ВКУС</h2>
+        <!-- заголовок для отдельных кофе -->
+        <div class="section-header">
+            <p class="section-header__subtitle">Выбери Свой Любимый</p>
+            <h2 class="section-header__title">Хороший вкус</h2>
+        </div>
 
-        <section class="section__third" id="COLOR PLATED FILM">
-            <article class="section__third__article__first">
-                <img src="assets/pr2/img/КофеЖелтый.png" alt="">
-                <p> 99.000 </p>
-                <h3>REVO Morning</h3>
-                <p>
-                    горький, послевкусие сладкое, цветочное
-                </p>
-                <button>купить сейчас</button>
-                <button>подробности</button>
+        <section class="products" id="products">
+            <article class="product-card products__item">
+                <img class="product-card__image" src="assets/pr2/img/КофеЖелтый.png" alt="REVO Morning">
+                <p class="product-card__price">99.000</p>
+                <h3 class="product-card__title">REVO Morning</h3>
+                <p class="product-card__description">горький, послевкусие сладкое, цветочное</p>
+                <button class="button product-card__button" type="button">купить сейчас</button>
+                <button class="button button--secondary product-card__button" type="button">подробности</button>
             </article>
 
-            <article class="section__third__article__second">
-                <img src="assets/pr2/img/КофеРыжий.png" alt="">
-                <p> 139.000 </p>
-                <h3>REVO Origin</h3>
-                <p>
-                    сладкий, менее горький, клубнично-кислый вкус
-                </p>
-                <button>купить сейчас</button>
-                <button>подробности</button>
+            <article class="product-card products__item">
+                <img class="product-card__image" src="assets/pr2/img/КофеРыжий.png" alt="REVO Origin">
+                <p class="product-card__price">139.000</p>
+                <h3 class="product-card__title">REVO Origin</h3>
+                <p class="product-card__description">сладкий, менее горький, клубнично-кислый вкус</p>
+                <button class="button product-card__button" type="button">купить сейчас</button>
+                <button class="button button--secondary product-card__button" type="button">подробности</button>
             </article>
 
-            <article class="section__third__article__third">
-                <img src="assets/pr2/img/КофеГолубой.png" alt="">
-                <p> 85.000 </p>
-                <h3>REVO Morning</h3>
-                <p>
-                    сбалансированный, послевкусие горького шоколада
-                </p>
-                <button>купить сейчас</button>
-                <button>подробности</button>
+            <article class="product-card products__item">
+                <img class="product-card__image" src="assets/pr2/img/КофеГолубой.png" alt="REVO Evening">
+                <p class="product-card__price">85.000</p>
+                <h3 class="product-card__title">REVO Evening</h3>
+                <p class="product-card__description">сбалансированный, послевкусие горького шоколада</p>
+                <button class="button product-card__button" type="button">купить сейчас</button>
+                <button class="button button--secondary product-card__button" type="button">подробности</button>
             </article>
 
-             <article class="section__third__article__fourth">
-                <img src="assets/pr2/img/КофеКоричнивый.png" alt="">
-                <p> 75.000 </p>
-                <h3>REVO Morning</h3>
-                <p>
-                    насыщенный, горьковатый, традиционный
-                </p>
-                <button>купить сейчас</button>
-                <button>подробности</button>
+            <article class="product-card products__item">
+                <img class="product-card__image" src="assets/pr2/img/Кофекоричнивый.png" alt="REVO Classic">
+                <p class="product-card__price">75.000</p>
+                <h3 class="product-card__title">REVO Classic</h3>
+                <p class="product-card__description">насыщенный, горьковатый, традиционный</p>
+                <button class="button product-card__button" type="button">купить сейчас</button>
+                <button class="button button--secondary product-card__button" type="button">подробности</button>
             </article>
-
         </section>
 
-        <p class="section__fourth__head"><br />Выбери Свой Любимый</p>
-        <h2 class="section__fourth__head">ХОРОШИЙ ВКУС</h2>
+        <!-- заголовок подарок -->
+        <div class="section-header">
+            <p class="section-header__subtitle">Выбери Свой Любимый</p>
+            <h2 class="section-header__title">Подарочный набор</h2>
+        </div>
 
-        <section class = "section__fourth" id="GIFT SET">
-            <article class="section__fourth__article__first">
-                <img src="assets/pr2/img/ПодарочныйНабор.png" alt="">
-                <p> 285.000 </p>
-                <h3>Подарочный набор "Вьетнамский кофе фин"</h3>
-                <p>
+        <section class="gift-set" id="gift-set">
+            <article class="gift-card">
+                <img class="gift-card__image" src="assets/pr2/img/ПодарочныйНабор.png" alt="Подарочный набор">
+                <p class="gift-card__price">285.000</p>
+                <h3 class="gift-card__title">Подарочный набор "Вьетнамский кофе фин"</h3>
+                <p class="gift-card__description">
                     Отличный подарок для ценителей кофе. Кофейные зерна, тщательно отобранные<br />
                     компанией Revo, обжаренные в&nbsp;соответствии с&nbsp;технологией и&nbsp;<nobr>ноу-хау</nobr>, приобретенными у&nbsp;известных мастеров,<br />
                     а&nbsp;также с&nbsp;любовью. любовь, страсть кофемашины&hellip; создают чашку кофе pure coffee именно для вас.
                 </p>
-                <img src="assets/pr2/icons/IC_coffee.png" alt="">
-                <p>Изысканная смесь Робусты</p>
-                <img src="assets/pr2/icons/IC_Mountain.png" alt="">
-                <p>700-800м</p>
-                <button>купить сейчас</button>
-                <button>подробности</button>
+                <div class="gift-card__features">
+                    <div class="gift-feature">
+                        <img class="gift-feature__icon" src="assets/pr2/icons/IC_coffee.png" alt="Coffee">
+                        <p class="gift-feature__text">Изысканная смесь Робусты</p>
+                    </div>
+                    <div class="gift-feature">
+                        <img class="gift-feature__icon" src="assets/pr2/icons/IC_Mountain.png" alt="Mountain">
+                        <p class="gift-feature__text">700-800м</p>
+                    </div>
+                </div>
+                <button class="button gift-card__button" type="button">купить сейчас</button>
+                <button class="button button--secondary gift-card__button" type="button">подробности</button>
             </article>
         </section>
 
-        <p class="section__fifth__head">Ваш персонализированный кофе</p>
-        <h2 class="section__fifth__head">КОМБИНИРОВАННЫЙ ФИНЬ-ПХЕ</h2>
+        <!-- заголовок комбинации -->
+        <div class="section-header">
+            <p class="section-header__subtitle">Ваш персонализированный кофе</p>
+            <h2 class="section-header__title">Комбинированный Финь-Пхе</h2>
+        </div>
 
-        <section class="section__fifth" id="PHIM PHIM COMBO">
-            <article class="section__fifth__article__first">
-                <img src="assets/pr2/img/КомбоКоричнивый.png" alt="">
-                <p> 147.000     <s>155.000</s> </p>
-                <h3>REVO Morning</h3>
-                <p>
+        <section class="combos" id="combos">
+            <article class="combo-card combos__item">
+                <img class="combo-card__image" src="assets/pr2/img/КомбоКоричнивый.png" alt="REVO Morning Combo">
+                <p class="combo-card__price">147.000 <s class="combo-card__old-price">155.000</s></p>
+                <h3 class="combo-card__title">REVO Morning</h3>
+                <p class="combo-card__description">
                     Содержание кофеина в&nbsp;Revo<br /> достаточно велико, чтобы не&nbsp;дать вам заснуть&hellip;
                 </p>
-                <button>купить сейчас</button>
-                <button>подробности</button>
+                <button class="button combo-card__button" type="button">купить сейчас</button>
+                <button class="button button--secondary combo-card__button" type="button">подробности</button>
             </article>
 
-            <article class="section__fifth__article__second">
-                <img src="assets/pr2/img/КомбоГолубой.png" alt="">
-                <p> 156.000     <s>165.000</s> </p>
-                <h3>Combo Revo Everyday</h3>
-                <p>
+            <article class="combo-card combos__item">
+                <img class="combo-card__image" src="assets/pr2/img/КомбоГолубой.png" alt="Combo Revo Everyday">
+                <p class="combo-card__price">156.000 <s class="combo-card__old-price">165.000</s></p>
+                <h3 class="combo-card__title">Combo Revo Everyday</h3>
+                <p class="combo-card__description">
                     Revo Everyday&nbsp;&mdash; это смесь<br /> горечи семян робусты и&nbsp;аромата&hellip;
                 </p>
-                <button>купить сейчас</button>
-                <button>подробности</button>
+                <button class="button combo-card__button" type="button">купить сейчас</button>
+                <button class="button button--secondary combo-card__button" type="button">подробности</button>
             </article>
 
-            <article class="section__fifth__article__third">
-                <img src="assets/pr2/img/КомбоКрасный.png" alt="">
-                <p> 275.000     <s>260.000</s> </p>
-                <h3>Combo Revo Honeyg</h3>
-                <p>
+            <article class="combo-card combos__item">
+                <img class="combo-card__image" src="assets/pr2/img/КомбоКрасный.png" alt="Combo Revo Honey">
+                <p class="combo-card__price">275.000 <s class="combo-card__old-price">260.000</s></p>
+                <h3 class="combo-card__title">Combo Revo Honey</h3>
+                <p class="combo-card__description">
                     Мед под названием Revo Honey появился<br /> благодаря способу переработки семян арабики&hellip;
                 </p>
-                <button>купить сейчас</button>
-                <button>подробности</button>
+                <button class="button combo-card__button" type="button">купить сейчас</button>
+                <button class="button button--secondary combo-card__button" type="button">подробности</button>
             </article>
         </section>
-
     </main>
 
-    <footer class="footer">
-        <p>&copy; Revo Coffee Vi&#7879;t&nbsp;Nam&nbsp;&mdash; 2018</p>
+    <footer class="footer" id="contacts">
+        <p class="footer__text">&copy; Revo Coffee Việt Nam — 2018</p>
     </footer>
+
+    <button class="scroll-to-top" id="scrollTop" type="button" aria-label="Наверх">
+        ↑
+    </button>
+
+    <script src="scripts/menu.js"></script>
 </body>
 </html>
